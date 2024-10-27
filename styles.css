@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.Container {
+    display: flex;
+    border-style: solid;
+    border-color: black;
+    height: 70vh;
+    width: 70vh;
+    flex-direction: column;
+}
+
+.rowDiv {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.columnDiv {
+    border: 1px solid;
+    border-color: black;
+    height: 100%;
+    width: 100%;
+}
+
