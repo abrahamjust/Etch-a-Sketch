@@ -46,11 +46,23 @@ function activateHoverEffect() {
     divColor = document.querySelectorAll('.columnDiv');
     divColor.forEach(divColor => {
         divColor.addEventListener("mouseover", function (e) {
-            e.target.style.backgroundColor = "Black";
+            let red = randomNumber();
+            let green = randomNumber();
+            let blue = randomNumber();
+            // can't use the variables directly, only works with numbers
+            // need to use the " ` ", inorder to substitute the variable values as numbers into the function
+            // " ` " is a template literal and is used for string interpolation (that subbing variables into values is interpolation)
+            e.target.style.backgroundColor = `rgb(${red},${green},${blue})`;
         });    
     });
 }
 
+// random number 
+function randomNumber() {
+    // 0 and 255 as it is the range for rgb colors
+    let random = 0 + Math.floor(Math.random() * (255 - 0 + 1));
+    return random
+}
 
 // event selectors
 
@@ -58,3 +70,4 @@ function activateHoverEffect() {
 const btn = document.querySelector('.changeSize');
 btn.addEventListener('click', alertSizeInput);
 
+console.log(randomNumber());
