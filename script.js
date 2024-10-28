@@ -29,7 +29,7 @@ function createGrid(a) {
 function alertSizeInput() {
     do {
         a = prompt("Enter the size of the grid (max size = 100, min size > 0)");
-    } while(a < 0 || a > 100);
+    } while(a <= 0 || a > 100);
     resetGrid();
     createGrid(a);
 }
