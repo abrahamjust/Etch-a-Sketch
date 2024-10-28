@@ -1,7 +1,8 @@
 // global variables and the default state.
-
+// default grid size
 let a = 10;
 createGrid(a);
+
 
 // functions
 
@@ -14,6 +15,8 @@ function createGrid(a) {
         for(j = 0; j < a; j++) {
             const colDiv = document.createElement('div');
             colDiv.className = 'columnDiv';
+            // setting a default opacity
+            colDiv.style.opacity = 0;
             rowDiv.appendChild(colDiv);
         }
         container.appendChild(rowDiv);
@@ -52,7 +55,12 @@ function activateHoverEffect() {
             // can't use the variables directly, only works with numbers
             // need to use the " ` ", inorder to substitute the variable values as numbers into the function
             // " ` " is a template literal and is used for string interpolation (that subbing variables into values is interpolation)
+            //taking the original/previous opacity and add 0.1 to it(to increase by 10%)
+            let opacity = parseFloat(e.target.style.opacity) + 0.1
+            // setting background color
             e.target.style.backgroundColor = `rgb(${red},${green},${blue})`;
+            // setting opacity
+            e.target.style.opacity = opacity;
         });    
     });
 }
@@ -69,5 +77,3 @@ function randomNumber() {
 //even when button is clicked
 const btn = document.querySelector('.changeSize');
 btn.addEventListener('click', alertSizeInput);
-
-console.log(randomNumber());
